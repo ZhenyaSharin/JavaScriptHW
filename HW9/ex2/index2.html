@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HW9-2</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+	    
+		function human(name, age, gender, interests) {
+			this.name = name;
+			this.age = age;
+			this.gender = gender;
+			this.interests = interests;
+			this.toString = function() {
+				return this.name + '. '+ 'Возраст:' + this.age + '. ' + 'Пол:' + this.gender + '. ' + 'Интересы:' + this.interests;
+			};
+		};
+		
+		function student(name, age, gender, interests, univer) {
+   			human.call(this, name, age, gender, interests);
+    		this.univer = univer;
+    		this.toString = function() {
+    			return this.name + '. '+ 'Возраст:' + this.age + '. ' + 'Пол:' + this.gender + '. ' + 'Интересы:' + this.interests +'. ' + 'Место учёбы:' + this.univer + '. ';
+    		}
+
+		};
+		var objHuman = new human('Александр', '20', 'м.', ['программирование', 'музыка']);
+		console.log(objHuman.toString());
+		
+
+		
+		var objStudent = new student('Александр', '20', 'м.', ['программирование', 'музыка'], 'Обучается в ИТМО');
+	 	console.log(objStudent.toString());
+		
+	</script>
+
+</body>
+</html>

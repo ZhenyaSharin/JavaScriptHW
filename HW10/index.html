@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HW10</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script type="text/javascript">
+		
+	function Good(name, price) {
+		this.name = name;
+		this.price = price;
+	    }
+
+	function Baskt() {
+		var products = [];
+		var cnt = 0;
+		var sum = 0;
+		this.goodAdd = function(Good) {
+			products.push(Good);
+		};
+		this.cntCount = function(Good) {
+			cnt = products.length;
+			console.log(cnt);
+		};
+		this.sumWhole = function(Good) {
+			sum = sum + (Good).price;
+			console.log(sum);
+		}
+	}
+
+	var good1 = new Good('book', 330);
+	var good2 = new Good('magazine', 150);
+
+	var baskt = new Baskt();
+	baskt.goodAdd(good1);
+	baskt.goodAdd(good2);
+
+	baskt.cntCount();
+
+	baskt.sumWhole(good1);
+	baskt.sumWhole(good2);
+
+	
+ 	
+
+	</script>
+
+
+</body>
+</html>

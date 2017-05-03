@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HW9</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	
+	<script type="text/javascript">
+		// var good = new Good();
+	function good(name, price) {
+		this.name = name;
+		this.price = price;
+		}
+	
+	var baskt = {
+		products: [],
+		cnt: 0,
+		sum: 0,
+		goodAdd: function(name, price) {
+			var newgd = new good(name, price);
+			this.products.push(newgd);
+		},
+		cntCount: function() {
+			this.cnt = this.products.length;
+			return this.cnt;
+		},
+		sumWhole: function() {
+			for (var i = 0; i < this.products.length; i++) {
+				this.sum = this.products[i].price + this.sum;
+			}
+			return this.sum;
+		}
+	};
+		baskt.goodAdd('book', 330);
+		baskt.goodAdd('magazine', 150);
+		console.log('количество товара:', baskt.cntCount());
+		console.log('сумма покупки:', baskt.sumWhole());
+	</script>
+</body>
+</html>
